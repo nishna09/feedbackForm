@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<head>
+    <title>Feedback form</title>
+    <style>
+        
+        body{
+            background-image: url(images.jpg);
+            animation: example 5s infinite;
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family:Gabriola;
+            color: whitesmoke;
+            font-size: x-large;
+            font-weight: bolder;
+            padding-top: 2%;
+        }
+        @keyframes example {
+            50% {background-position: center;}
+        }
+
+        legend{
+            font-size:xx-large;
+            font-weight: bolder;
+        }
+
+        #form_info{
+            box-sizing: border-box;
+            border: 3px solid rgb(252, 252, 252);
+            border-radius: 50px 10px;
+            width:60%;
+            display: grid;
+            margin-left: 20%;
+            margin-right: 15%;
+            justify-items: center;
+        }
+        
+        input, select, textarea {
+            width: 40%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 3px solid rgb(252, 252, 252);
+            border-radius: 15px 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 50%;
+            background-color: #d17b02;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family:Gabriola;
+            font-size: larger;
+            font-weight: bolder
+        }
+
+        button:hover {
+            background-color: #20B2AA;
+        }
+
+        .rating {
+            display: inline-block;
+            position: relative;
+            height: 50px;
+            line-height: 50px;
+            font-size: 50px;
+        }
+
+        .rating label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .rating label:last-child {
+            position: static;
+        }
+
+        .rating label:nth-child(1) {
+            z-index: 5;
+        }
+
+        .rating label:nth-child(2) {
+            z-index: 4;
+        }
+
+        .rating label:nth-child(3) {
+            z-index: 3;
+        }
+
+        .rating label:nth-child(4) {
+            z-index: 2;
+        }
+
+        .rating label:nth-child(5) {
+        z-index: 1;
+        }
+
+        .rating label input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        .rating label .icon {
+            float: left;
+            color: transparent;
+        }
+
+        .rating label:last-child .icon {
+            color: #edb742;
+        }
+
+        .rating:not(:hover) label input:checked ~ .icon,
+        .rating:hover label:hover input ~ .icon {
+            color: #20B2AA;
+        }
+
+        .rating label input:focus:not(:checked) ~ .icon:last-child {
+            color: #edb742;
+            text-shadow: 0 0 5px #20B2AA;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="formArea">
+        <form id="form_info">
+            <legend>Feedback Form</legend>
+            <label for="name">Name: </label> 
+            <input id="name" type="text"placeholder="Name...">
+            <label for="email">Email Address:</label> 
+            <input id="email" type="email"placeholder="Email Address...">
+            <label for="department">Department: </label> 
+            <select for="department">
+                <option>Enter your department</option>
+                <option>Product and Technology</option>
+                <option>Customer Support</option>
+                <option>Human Resource</option>
+                <option>Other</option>
+            </select>
+            <label for="rating">Rating: </label>
+            <div class="rating">
+                <label>
+                    <input type="radio" name="stars" value="1" />
+                    <span class="icon">★</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="stars" value="2" />
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="stars" value="3" />
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>   
+                  </label>
+                  <label>
+                    <input type="radio" name="stars" value="4" />
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="stars" value="5" />
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                  </label>
+            </div>
+            <label for="suggestion">Suggestions: </label>
+            <select id="suggestion">
+                <option>Give your suggestions</option>
+                <option>More labs/assignment</option>
+                <option>More self learning sessions</option>
+                <option>More food (especially pizza)</option>
+                <option>More complex training sessions</option>
+                <option>Less complex training sessions</option>
+            </select>
+            <label for="comments">Comments: </label>
+            <textarea id="comments" name="comments" rows="4"></textarea>
+            <button>Submit Feedback</button>
+
+
+        </form>
+
+        
+
+    </div>
+</body>
+</html>
